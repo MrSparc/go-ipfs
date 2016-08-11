@@ -3,8 +3,8 @@
 # Echo the args, run the cmd, and then also fail,
 # making sure a test case fails.
 test_fsh() {
-    echo "> $@"
-    eval "$@"
+    echo ">" "$@"
+    eval $(printf "%q " "$@")
     echo ""
     false
 }
